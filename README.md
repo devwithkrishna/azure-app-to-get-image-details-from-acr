@@ -62,7 +62,18 @@ This app helps in displaying image details available in an azure container regis
 
    ![wrong-acr-name-error.jpeg](wrong-acr-name-error.jpeg) 
 
+# Deployment
 
+You can manually run the application as a docker container using below command:
+
+Build the image using:
+
+* clone the repo && switch to the direcctory
+
+    `docker build -t <image:tag> .`
+* To deploy
+
+    `docker run -p 8501:8501 -e AZURE_CLIENT_ID=client_id -e AZURE_CLIENT_SECRET=client_secret -e AZURE_TENANT_ID=tenant_id -it <image name: tag>`
 
 
 
