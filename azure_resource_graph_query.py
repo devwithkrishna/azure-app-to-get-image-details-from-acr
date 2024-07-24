@@ -49,7 +49,9 @@ def validate_input_acr_name(acr_name: str):
         print(f"{acr} is valid.")
     else:
         print(f"ACR {acr} can not be found in azure")
-        st.text(f"ACR {acr} can not be found in azure 🚫")
+        # displaying error in streamlit ui
+        st.text(f"Azure container resistry with name '{acr}' can not be found in azure 🚫")
+        st.text(f"Please verify & provide right ACR name")
         sys.exit(f"Error: ACR {acr} can not be found in azure")
         return False
 
@@ -61,7 +63,7 @@ def main():
     """
     load_dotenv()
     logging.info("ARG query being prepared......")
-    run_azure_rg_query(subscription_name="TECH-ARCHITECTS-NONPROD")
+    acr = run_azure_rg_query()
     logging.info("ARG query Completed......")
 
 

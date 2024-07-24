@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 from azure.identity import DefaultAzureCredential, EnvironmentCredential
 from azure.containerregistry import ContainerRegistryClient
 from date_time import date_time
-from azure_resource_graph_query import validate_input_acr_name
 from azure.core.exceptions import HttpResponseError, ClientAuthenticationError
 
 
@@ -26,15 +25,15 @@ def list_image_tag_details(acr_name: str):
 	:param acr_name:
 	:return:
 	"""
+	from azure_resource_graph_query import validate_input_acr_name
 	credential = EnvironmentCredential()
-
-	repositories = get_image_names_from_acr(acr_name=acr_name)
-	acr_url = return_acr_endpoint(acr_name=acr_name)
-	print(f'Image details will be fetched from : {acr_url}')
 	# validate acr input
 	valid = validate_input_acr_name(acr_name=acr_name)
 
-	# Image - tag count
+	repositories = get_image_names_from_acr(acr_name=acr_name)
+	acr_url = return_acr_endpoint(acr_name=acr_name)
+	# print(f'Image details will be fetched from : {acr_url}')
+
 	image_tag_count = {}
 	client = ContainerRegistryClient(endpoint=acr_url, credential=credential)
 	for repository in repositories:
