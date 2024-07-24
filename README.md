@@ -1,4 +1,6 @@
 # azure-app-to-get-image-details-from-acr
+[![azure-app-to-get-image-details-from-acr](https://github.com/devwithkrishna/azure-app-to-get-image-details-from-acr/actions/workflows/build-ci.yaml/badge.svg)](https://github.com/devwithkrishna/azure-app-to-get-image-details-from-acr/actions/workflows/build-ci.yaml)
+
 This app helps in displaying image details available in an azure container registry
 
 # Why the requirement of a application to list azure acr image lists
