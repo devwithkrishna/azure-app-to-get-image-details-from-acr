@@ -25,6 +25,14 @@ This app helps in displaying image details available in an azure container regis
  has enough permissions to list images, Acess ACR's. This class `EnvironmentCredential` been used. 
  [azure-identity](https://learn.microsoft.com/en-us/python/api/overview/azure/identity-readme?view=azure-python)
 
+| variable name       | value                                           |
+|---------------------|-------------------------------------------------|
+| AZURE_CLIENT_ID     | ID of a Microsoft Entra application             |
+| AZURE_TENANT_ID     | 	ID of the application's Microsoft Entra tenant |
+| AZURE_CLIENT_SECRET |	one of the application's client secrets |
+
+**The above environment variables are required**. [service-principal-with-secret](https://learn.microsoft.com/en-us/python/api/overview/azure/identity-readme?view=azure-python#service-principal-with-secret)
+
 * Microsoft Azure Container Registry Client Library for Python is used to list all images and tags in a ACR.
   [azure-containerregistry](https://learn.microsoft.com/en-us/python/api/overview/azure/containerregistry-readme?view=azure-python)
 
